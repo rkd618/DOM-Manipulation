@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        line-height: 1.6;
+    }
+
+    .parentcontainer {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        margin: 65px auto;
+        border-radius: 5px;
+    }
+
+    p {
+        font-size: 18px;
+        font: 800;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-transform: capitalize;
+    }
+
+    .card {
+        width: 380px;
+        height: 400px;
+        border: 3px solid yellow;
+        position: relative;
+        background-color: rgb(127, 206, 255);
+    }
+
+    .card img {
+        border-radius: 5px;
+        width: 100%;
+        height: 55%;
+        position: absolute;
+        background-repeat: none;
+        object-position: center;
+        object-fit: fill;
+    }
+    .Pk {
+        position: absolute;
+        text-transform: capitalize;
+        font-size: 28px;
+        left: 85px;
+        color: aliceblue;
+        bottom: 110px;
+        font-weight: 900;
+       text-align: center;
+    }
+    .toggler {
+        position: absolute;
+        text-transform: capitalize;
+        color: red;
+        font-size: 22px;
+        left: 155px;
+        bottom: 75px;
+        font-size: 18px;
+        font-weight: 800;
+       text-align: center;
+    }
+
+    .freind {
+        width: 150px;
+        position: absolute;
+        left: 135px;
+        font: 500;
+        border: 1px solid black;
+        bottom: 25px;
+        text-transform: capitalize;
+        font-size: 18px;
+        height: 35px;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+        background-color: green
+    }
+</style>
+
+<body>
+    <div class="parentcontainer">
+        <div class="card">
+            <img
+                src="https://images.unsplash.com/photo-1524511498335-b0ed6b8e9a69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGxhbmRzY2FwZSUyMG1vZGVsJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60">
+            <p class="Pk">ANGELINA JOLI</p>
+            <p class="toggler">Stranger</p>
+            <button class="freind">Add Freind</button>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded" , function(){
+        var status = document.querySelector('.toggler') ;
+        var addfreind = document.querySelector('.freind');
+        var isfreind = 0 
+        
+        addfreind.addEventListener('click' , function(){
+            if(isfreind == 0){
+                status.innerHTML = "FREIND" ;       
+                status.style.color = "green"
+                addfreind.style.backgroundColor = "red"
+                addfreind.innerHTML = "Remove freind"
+                status.style.marginLeft = "5px";
+                isfreind = 1
+                console.log("kk")
+            }
+         else{  status.innerHTML = "Stranger"
+                status.style.color = "red"
+                addfreind.style.backgroundColor = "green"
+                addfreind.innerHTML = "ADD freind"
+                console.log("king")
+                isfreind = 0
+         }
+
+        })
+        
+        
+    })
+</script>
+
+</html>

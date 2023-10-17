@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        line-height: 1.6;
+    }
+
+    .parentcontainer {
+        margin: auto;
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .divparents {
+        width: 700px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: rgb(147, 147, 174) !important;
+
+        border: 2px solid greenyellow;
+    }
+
+    .divparents> :not(:last-child) {
+        margin-right: 20px;
+    }
+
+    p {
+        font-size: 18px;
+        font: 800;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-transform: capitalize;
+    }
+
+    .div1 {
+        margin-left: 20px;
+        width: 150px;
+        height: 150px;
+        background-color: yellow;
+        border: 2px solid grey;
+    }
+
+    .div2 {
+        width: 150px;
+        height: 150px;
+        background-color: rgb(16, 149, 231);
+    }
+
+    .div3 {
+        width: 150px;
+        height: 150px;
+        background-color: crimson;
+    }
+
+    .div4 {
+        width: 150px;
+        height: 150px;
+        background-color: cadetblue;
+    }
+</style>
+
+<body>
+    <div class="parentcontainer">
+        <div>
+            <p>On clicking on button background color will get Change</p>
+        </div>
+        <div class="divparents">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+            <div class="div4"></div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var div11 = document.querySelector(".div1");
+        var div22 = document.querySelector(".div2");
+        var div33 = document.querySelector(".div3");
+        var div44 = document.querySelector(".div4");
+        var background = document.querySelector("body")
+
+        div11.addEventListener('mouseenter', function () {
+            background.style.backgroundColor = "yellow";
+        })
+        div22.addEventListener('click', function () {
+            background.style.backgroundColor = "rgb(16, 149, 231)";
+        })
+        div33.addEventListener("mouseleave", function () {
+            background.style.backgroundColor = "crimson";
+        })
+        div44.addEventListener('click', function () {
+            background.style.backgroundColor = "cadetblue";
+        });
+    });
+</script>
+
+</html>
